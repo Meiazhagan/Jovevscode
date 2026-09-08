@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Industrial IoT | Trends</title>
+
+    <link rel="stylesheet" href="css/trends.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo-section">
+
+            <div class="iot-logo">
+             <img src="jovelogo.png" alt="Company Logo">
+             </div>
+            <div>
+                <h2>Industrial</h2>
+                <span>IoT Monitoring</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                Dashboard
+            </a>
+
+            <a href="machines.html" class="nav-item">
+                <span class="nav-icon">▦</span>
+                Machines
+            </a>
+
+            <a href="alarms.html" class="nav-item">
+                <span class="nav-icon">⚠</span>
+                Alarms
+                <span class="alarm-badge">15</span>
+            </a>
+
+            <a href="trends.html" class="nav-item active">
+                <span class="nav-icon">⌁</span>
+                Trends
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">▤</span>
+                Reports
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+
+        <!-- SYSTEM STATUS -->
+
+        <div class="system-status">
+
+            <div class="system-title">
+                SYSTEM STATUS
+            </div>
+
+            <div class="system-row">
+                <span class="status-dot green"></span>
+                IoT Cloud
+                <strong>Online</strong>
+            </div>
+
+            <div class="system-row">
+                <span class="status-dot green"></span>
+                PLC Network
+                <strong>Online</strong>
+            </div>
+
+            <div class="system-row">
+                <span class="status-dot green"></span>
+                Database
+                <strong>Online</strong>
+            </div>
+
+        </div>
+
+
+        <!-- USER -->
+
+        <div class="user-section">
+
+            <div class="user-avatar">
+                A
+            </div>
+
+            <div>
+                <strong>Administrator</strong>
+                <small>System Admin</small>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <span class="breadcrumb">
+                    INDUSTRIAL IoT / TREND ANALYSIS
+                </span>
+
+                <h1>Trend Monitoring</h1>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="datetime">
+
+                    <div id="currentDate">
+                        08 SEP 2026
+                    </div>
+
+                    <strong id="currentTime">
+                        22:00:00
+                    </strong>
+
+                </div>
+
+
+                <div class="live-status">
+
+                    <span class="live-dot"></span>
+
+                    LIVE
+
+                </div>
+
+
+                <div class="notification">
+
+                    ⚠
+
+                    <span>
+                        15
+                    </span>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <span>
+                        Admin
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= TREND SELECTION ================= -->
+
+        <section class="trend-controls">
+
+
+            <div class="control-group">
+
+                <label>
+                    MACHINE
+                </label>
+
+                <select id="machineSelect">
+
+                    <option value="M001">
+                        M001 - Packaging Machine 01
+                    </option>
+
+                    <option value="M002">
+                        M002 - Filling Machine 02
+                    </option>
+
+                    <option value="M003">
+                        M003 - Conveyor System 03
+                    </option>
+
+                    <option value="M004">
+                        M004 - Pump Station 04
+                    </option>
+
+                    <option value="M005">
+                        M005 - Mixing Machine 05
+                    </option>
+
+                    <option value="M006">
+                        M006 - Compressor 06
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label>
+                    PARAMETER
+                </label>
+
+                <select id="parameterSelect">
+
+                    <option value="temperature">
+                        Temperature
+                    </option>
+
+                    <option value="pressure">
+                        Pressure
+                    </option>
+
+                    <option value="current">
+                        Motor Current
+                    </option>
+
+                    <option value="voltage">
+                        Voltage
+                    </option>
+
+                    <option value="rpm">
+                        Motor RPM
+                    </option>
+
+                    <option value="vibration">
+                        Vibration
+                    </option>
+
+                    <option value="power">
+                        Power
+                    </option>
+
+                    <option value="production">
+                        Production
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label>
+                    TIME RANGE
+                </label>
+
+                <select id="timeRange">
+
+                    <option value="1h">
+                        Last 1 Hour
+                    </option>
+
+                    <option value="6h">
+                        Last 6 Hours
+                    </option>
+
+                    <option value="12h">
+                        Last 12 Hours
+                    </option>
+
+                    <option value="24h" selected>
+                        Last 24 Hours
+                    </option>
+
+                    <option value="7d">
+                        Last 7 Days
+                    </option>
+
+                    <option value="30d">
+                        Last 30 Days
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="apply-btn"
+                onclick="updateTrend()"
+            >
+                APPLY
+            </button>
+
+
+            <button
+                class="reset-btn"
+                onclick="resetTrend()"
+            >
+                RESET
+            </button>
+
+        </section>
+
+
+
+        <!-- ================= MACHINE INFO ================= -->
+
+        <section class="machine-info">
+
+            <div>
+
+                <span>
+                    SELECTED MACHINE
+                </span>
+
+                <strong id="selectedMachine">
+                    M001 - Packaging Machine 01
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong class="machine-running">
+
+                    <i></i>
+
+                    RUNNING
+
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    PLC
+                </span>
+
+                <strong>
+                    Siemens S7-1500
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    DATA SOURCE
+                </span>
+
+                <strong>
+                    OPC UA / MQTT
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TREND PANEL ================= -->
+
+        <section class="trend-panel">
+
+
+            <div class="trend-header">
+
+                <div>
+
+                    <h2 id="trendTitle">
+                        Temperature Trend
+                    </h2>
+
+                    <span id="trendSubtitle">
+                        M001 • Last 24 Hours
+                    </span>
+
+                </div>
+
+
+                <div class="trend-live">
+
+                    <span class="live-dot"></span>
+
+                    LIVE DATA
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CHART -->
+
+            <div class="chart-container">
+
+                <div class="y-axis">
+
+                    <span>100</span>
+                    <span>80</span>
+                    <span>60</span>
+                    <span>40</span>
+                    <span>20</span>
+                    <span>0</span>
+
+                </div>
+
+
+                <div class="chart-area">
+
+                    <div class="grid-line line-1"></div>
+                    <div class="grid-line line-2"></div>
+                    <div class="grid-line line-3"></div>
+                    <div class="grid-line line-4"></div>
+                    <div class="grid-line line-5"></div>
+
+
+                    <svg
+                        id="trendChart"
+                        viewBox="0 0 1000 350"
+                        preserveAspectRatio="none"
+                    >
+
+                        <defs>
+
+                            <linearGradient
+                                id="areaGradient"
+                                x1="0"
+                                y1="0"
+                                x2="0"
+                                y2="1"
+                            >
+
+                                <stop
+                                    offset="0%"
+                                    stop-color="#2d8cff"
+                                    stop-opacity="0.30"
+                                />
+
+                                <stop
+                                    offset="100%"
+                                    stop-color="#2d8cff"
+                                    stop-opacity="0"
+                                />
+
+                            </linearGradient>
+
+                        </defs>
+
+
+                        <polygon
+                            id="trendArea"
+                            fill="url(#areaGradient)"
+                            points=""
+                        ></polygon>
+
+
+                        <polyline
+                            id="trendLine"
+                            fill="none"
+                            stroke="#2d8cff"
+                            stroke-width="3"
+                            points=""
+                        ></polyline>
+
+
+                        <circle
+                            id="currentPoint"
+                            cx="990"
+                            cy="100"
+                            r="5"
+                            fill="#2d8cff"
+                        ></circle>
+
+                    </svg>
+
+
+                    <div class="x-axis">
+
+                        <span>00:00</span>
+                        <span>04:00</span>
+                        <span>08:00</span>
+                        <span>12:00</span>
+                        <span>16:00</span>
+                        <span>20:00</span>
+                        <span>24:00</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-footer">
+
+                <span id="parameterUnit">
+                    Temperature (°C)
+                </span>
+
+                <span>
+                    Data Interval: 1 Minute
+                </span>
+
+                <span>
+                    Source: PLC / IoT Gateway
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= KPI CARDS ================= -->
+
+        <section class="trend-kpis">
+
+
+            <div class="kpi-card">
+
+                <span>
+                    CURRENT
+                </span>
+
+                <strong id="currentValue">
+                    76.4 °C
+                </strong>
+
+                <small>
+                    Live value
+                </small>
+
+            </div>
+
+
+            <div class="kpi-card">
+
+                <span>
+                    MINIMUM
+                </span>
+
+                <strong id="minValue">
+                    61.2 °C
+                </strong>
+
+                <small>
+                    Selected period
+                </small>
+
+            </div>
+
+
+            <div class="kpi-card">
+
+                <span>
+                    MAXIMUM
+                </span>
+
+                <strong id="maxValue">
+                    84.7 °C
+                </strong>
+
+                <small>
+                    Selected period
+                </small>
+
+            </div>
+
+
+            <div class="kpi-card">
+
+                <span>
+                    AVERAGE
+                </span>
+
+                <strong id="avgValue">
+                    73.8 °C
+                </strong>
+
+                <small>
+                    Selected period
+                </small>
+
+            </div>
+
+
+            <div class="kpi-card">
+
+                <span>
+                    SAMPLE COUNT
+                </span>
+
+                <strong id="sampleCount">
+                    1440
+                </strong>
+
+                <small>
+                    Data points
+                </small>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= MULTI PARAMETER ================= -->
+
+        <section class="multi-trend-panel">
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>
+                        Machine Parameter Overview
+                    </h2>
+
+                    <span>
+                        Real-time parameter summary
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="parameter-grid">
+
+
+                <div class="parameter-card">
+
+                    <div class="parameter-title">
+
+                        Temperature
+
+                        <span class="parameter-dot"></span>
+
+                    </div>
+
+                    <strong>
+                        76.4 °C
+                    </strong>
+
+                    <small>
+                        Normal Range: 60–85 °C
+                    </small>
+
+                    <div class="mini-bar">
+                        <div style="width:76%"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter-card">
+
+                    <div class="parameter-title">
+
+                        Pressure
+
+                        <span class="parameter-dot"></span>
+
+                    </div>
+
+                    <strong>
+                        6.8 bar
+                    </strong>
+
+                    <small>
+                        Normal Range: 5–8 bar
+                    </small>
+
+                    <div class="mini-bar">
+                        <div style="width:68%"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter-card">
+
+                    <div class="parameter-title">
+
+                        Motor Current
+
+                        <span class="parameter-dot"></span>
+
+                    </div>
+
+                    <strong>
+                        32.6 A
+                    </strong>
+
+                    <small>
+                        Normal Range: 20–40 A
+                    </small>
+
+                    <div class="mini-bar">
+                        <div style="width:65%"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter-card">
+
+                    <div class="parameter-title">
+
+                        Vibration
+
+                        <span class="parameter-dot warning"></span>
+
+                    </div>
+
+                    <strong>
+                        4.8 mm/s
+                    </strong>
+
+                    <small>
+                        Warning above 5 mm/s
+                    </small>
+
+                    <div class="mini-bar">
+                        <div style="width:48%"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter-card">
+
+                    <div class="parameter-title">
+
+                        Motor RPM
+
+                        <span class="parameter-dot"></span>
+
+                    </div>
+
+                    <strong>
+                        1482 RPM
+                    </strong>
+
+                    <small>
+                        Setpoint: 1500 RPM
+                    </small>
+
+                    <div class="mini-bar">
+                        <div style="width:82%"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="parameter-card">
+
+                    <div class="parameter-title">
+
+                        Power
+
+                        <span class="parameter-dot"></span>
+
+                    </div>
+
+                    <strong>
+                        18.7 kW
+                    </strong>
+
+                    <small>
+                        Rated: 25 kW
+                    </small>
+
+                    <div class="mini-bar">
+                        <div style="width:75%"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            Industrial IoT Machine Monitoring System
+
+            <span>•</span>
+
+            Trend Analysis
+
+            <span>•</span>
+
+            © 2026
+
+        </footer>
+
+    </main>
+
+
+    <script src="js/trends.js"></script>
+
+</body>
+
+</html>

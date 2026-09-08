@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Industrial IoT | Dashboard</title>
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <div class="logo-area">
+    <img src="jovelogo.png" alt="Company Logo" class="company-logo">
+</div>
+
+            <div class="logo-name">
+
+                <strong>INDUSTRIAL</strong>
+
+                <span>IoT MONITORING</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+
+            <a href="dashboard.html"
+               class="nav-item active">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="machines.html" class="nav-item">
+
+                <span class="nav-icon">▦</span>
+
+                <span>Machines</span>
+
+            </a>
+
+
+            <a href="alarms.html"
+               class="nav-item">
+
+                <span class="nav-icon">⚠</span>
+
+                <span>Alarms</span>
+
+                <span class="nav-count">
+                    15
+                </span>
+
+            </a>
+
+
+            <a href="trends.html"
+               class="nav-item">
+
+                <span class="nav-icon">⌁</span>
+
+                <span>Trends</span>
+
+            </a>
+
+
+            <a href="#"
+               class="nav-item">
+
+                <span class="nav-icon">▤</span>
+
+                <span>Reports</span>
+
+            </a>
+
+
+            <a href="#"
+               class="nav-item">
+
+                <span class="nav-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- SYSTEM STATUS -->
+
+        <div class="system-box">
+
+
+            <div class="system-title">
+
+                <span class="live-dot"></span>
+
+                SYSTEM ONLINE
+
+            </div>
+
+
+            <div class="system-row">
+
+                <span>IoT Cloud</span>
+
+                <strong>Connected</strong>
+
+            </div>
+
+
+            <div class="system-row">
+
+                <span>PLC Network</span>
+
+                <strong>Connected</strong>
+
+            </div>
+
+
+            <div class="system-row">
+
+                <span>Database</span>
+
+                <strong>Connected</strong>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- USER -->
+
+        <div class="user-section">
+
+            <div class="avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong>
+                    Administrator
+                </strong>
+
+                <small>
+                    System Admin
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="top-header">
+
+
+            <div class="page-heading">
+
+                <span>
+                    INDUSTRIAL IoT / OVERVIEW
+                </span>
+
+                <h1>
+                    Machine Monitoring Dashboard
+                </h1>
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <!-- DATE / TIME -->
+
+                <div class="datetime">
+
+                    <div id="currentDate">
+                        08 SEP 2026
+                    </div>
+
+                    <div id="currentTime">
+                        18:36:00
+                    </div>
+
+                </div>
+
+
+                <!-- LIVE -->
+
+                <div class="live-status">
+
+                    <span class="live-dot"></span>
+
+                    LIVE
+
+                </div>
+
+
+                <!-- NOTIFICATION -->
+
+                <div class="notification">
+
+                    🔔
+
+                    <span>
+                        15
+                    </span>
+
+                </div>
+
+
+                <!-- PROFILE -->
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Administrator
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+        ================================================== -->
+
+        <section class="summary-grid">
+
+
+            <!-- TOTAL -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+                    ▦
+                </div>
+
+                <div class="summary-info">
+
+                    <span>
+                        TOTAL MACHINES
+                    </span>
+
+                    <strong>
+                        300
+                    </strong>
+
+                    <small>
+                        All registered machines
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- RUNNING -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+                    ●
+                </div>
+
+                <div class="summary-info">
+
+                    <span>
+                        RUNNING
+                    </span>
+
+                    <strong>
+                        247
+                    </strong>
+
+                    <small class="positive">
+                        82.3% operational
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- STOPPED -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon red">
+                    ●
+                </div>
+
+                <div class="summary-info">
+
+                    <span>
+                        STOPPED
+                    </span>
+
+                    <strong>
+                        38
+                    </strong>
+
+                    <small>
+                        Machines stopped
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- WARNING -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon orange">
+                    !
+                </div>
+
+                <div class="summary-info">
+
+                    <span>
+                        ACTIVE ALARMS
+                    </span>
+
+                    <strong>
+                        15
+                    </strong>
+
+                    <small class="warning-text">
+                        Attention required
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MAIN DASHBOARD ROW
+        ================================================== -->
+
+        <section class="dashboard-row">
+
+
+            <!-- =================================================
+                 MACHINE STATUS
+            ================================================== -->
+
+            <div class="panel machine-status-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Machine Status
+                        </h2>
+
+                        <span>
+                            Live status of all 300 machines
+                        </span>
+
+                    </div>
+
+
+                    <div class="live-label">
+
+                        <span class="live-dot"></span>
+
+                        LIVE
+
+                    </div>
+
+                </div>
+
+
+                <!-- MACHINE SCROLL -->
+
+                <div class="machine-scroll-window">
+
+                    <div id="machineList"
+                         class="machine-list">
+
+                        <!-- JavaScript will create
+                             300 machines here -->
+
+                    </div>
+
+                </div>
+
+
+                <div class="scroll-footer">
+
+                    <span>
+                        Auto monitoring active
+                    </span>
+
+                    <a href="machines.html">
+                        View All 300 →
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ACTIVE ALARMS
+            ================================================== -->
+
+            <div class="panel alarm-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Active Alarms
+                        </h2>
+
+                        <span>
+                            Requires attention
+                        </span>
+
+                    </div>
+
+
+                    <div class="alarm-count">
+                        15
+                    </div>
+
+                </div>
+
+
+                <div class="alarm-list">
+
+
+                    <div class="alarm-item critical">
+
+                        <div class="alarm-icon">
+                            !
+                        </div>
+
+                        <div class="alarm-info">
+
+                            <strong>
+                                High Temperature
+                            </strong>
+
+                            <span>
+                                M023 • Reactor Machine
+                            </span>
+
+                        </div>
+
+                        <time>
+                            18:31
+                        </time>
+
+                    </div>
+
+
+                    <div class="alarm-item critical">
+
+                        <div class="alarm-icon">
+                            !
+                        </div>
+
+                        <div class="alarm-info">
+
+                            <strong>
+                                High Motor Current
+                            </strong>
+
+                            <span>
+                                M087 • Compressor
+                            </span>
+
+                        </div>
+
+                        <time>
+                            18:28
+                        </time>
+
+                    </div>
+
+
+                    <div class="alarm-item warning">
+
+                        <div class="alarm-icon">
+                            !
+                        </div>
+
+                        <div class="alarm-info">
+
+                            <strong>
+                                High Vibration
+                            </strong>
+
+                            <span>
+                                M112 • Pump Station
+                            </span>
+
+                        </div>
+
+                        <time>
+                            18:24
+                        </time>
+
+                    </div>
+
+
+                    <div class="alarm-item warning">
+
+                        <div class="alarm-icon">
+                            !
+                        </div>
+
+                        <div class="alarm-info">
+
+                            <strong>
+                                Temperature Warning
+                            </strong>
+
+                            <span>
+                                M156 • Mixer
+                            </span>
+
+                        </div>
+
+                        <time>
+                            18:19
+                        </time>
+
+                    </div>
+
+
+                    <div class="alarm-item maintenance">
+
+                        <div class="alarm-icon">
+                            ⚙
+                        </div>
+
+                        <div class="alarm-info">
+
+                            <strong>
+                                Maintenance Due
+                            </strong>
+
+                            <span>
+                                M205 • Packaging
+                            </span>
+
+                        </div>
+
+                        <time>
+                            18:12
+                        </time>
+
+                    </div>
+
+
+                </div>
+
+
+                <button class="view-alarms">
+                    View All Alarms
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SECOND ROW
+        ================================================== -->
+
+        <section class="bottom-grid">
+
+
+            <!-- =================================================
+                 LIVE TREND
+            ================================================== -->
+
+            <div class="panel trend-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Live Machine Trend
+                        </h2>
+
+                        <span>
+                            Average temperature • Last 30 minutes
+                        </span>
+
+                    </div>
+
+
+                    <select>
+
+                        <option>
+                            Temperature
+                        </option>
+
+                        <option>
+                            Motor Current
+                        </option>
+
+                        <option>
+                            Power
+                        </option>
+
+                        <option>
+                            Vibration
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="chart">
+
+                    <div class="chart-y">
+
+                        <span>100</span>
+                        <span>80</span>
+                        <span>60</span>
+                        <span>40</span>
+                        <span>20</span>
+                        <span>0</span>
+
+                    </div>
+
+
+                    <div class="chart-area">
+
+
+                        <div class="grid-line line1"></div>
+
+                        <div class="grid-line line2"></div>
+
+                        <div class="grid-line line3"></div>
+
+                        <div class="grid-line line4"></div>
+
+                        <div class="grid-line line5"></div>
+
+
+                        <svg
+                            class="trend-svg"
+                            viewBox="0 0 800 260"
+                            preserveAspectRatio="none">
+
+
+                            <polyline
+                                points="
+                                0,190
+                                45,175
+                                90,180
+                                135,150
+                                180,160
+                                225,130
+                                270,145
+                                315,110
+                                360,125
+                                405,95
+                                450,105
+                                495,80
+                                540,100
+                                585,70
+                                630,85
+                                675,60
+                                720,78
+                                760,50
+                                800,65"
+                                fill="none"
+                                stroke="#2d8cff"
+                                stroke-width="4"
+                            />
+
+                        </svg>
+
+
+                        <div class="chart-x">
+
+                            <span>18:00</span>
+                            <span>18:05</span>
+                            <span>18:10</span>
+                            <span>18:15</span>
+                            <span>18:20</span>
+                            <span>18:25</span>
+                            <span>18:30</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MACHINE HEALTH
+            ================================================== -->
+
+            <div class="panel health-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Machine Health
+                        </h2>
+
+                        <span>
+                            Overall fleet condition
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="health-content">
+
+
+                    <div class="health-circle">
+
+                        <div>
+
+                            <strong>
+                                91.4%
+                            </strong>
+
+                            <span>
+                                HEALTH SCORE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="health-details">
+
+
+                        <div class="health-row">
+
+                            <span>
+                                Excellent
+                            </span>
+
+                            <strong>
+                                218
+                            </strong>
+
+                        </div>
+
+
+                        <div class="health-row">
+
+                            <span>
+                                Good
+                            </span>
+
+                            <strong>
+                                29
+                            </strong>
+
+                        </div>
+
+
+                        <div class="health-row">
+
+                            <span>
+                                Attention
+                            </span>
+
+                            <strong>
+                                15
+                            </strong>
+
+                        </div>
+
+
+                        <div class="health-row">
+
+                            <span>
+                                Critical
+                            </span>
+
+                            <strong>
+                                38
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             BOTTOM STATUS
+        ================================================== -->
+
+        <section class="connectivity">
+
+
+            <div class="connection-card">
+
+                <span class="connection-icon">
+                    ☁
+                </span>
+
+                <div>
+
+                    <span>
+                        IoT CLOUD
+                    </span>
+
+                    <strong>
+                        Connected
+                    </strong>
+
+                </div>
+
+                <span class="connection-dot"></span>
+
+            </div>
+
+
+            <div class="connection-card">
+
+                <span class="connection-icon">
+                    ▣
+                </span>
+
+                <div>
+
+                    <span>
+                        PLC NETWORK
+                    </span>
+
+                    <strong>
+                        300 / 300 Connected
+                    </strong>
+
+                </div>
+
+                <span class="connection-dot"></span>
+
+            </div>
+
+
+            <div class="connection-card">
+
+                <span class="connection-icon">
+                    ◉
+                </span>
+
+                <div>
+
+                    <span>
+                        MQTT BROKER
+                    </span>
+
+                    <strong>
+                        Connected
+                    </strong>
+
+                </div>
+
+                <span class="connection-dot"></span>
+
+            </div>
+
+
+            <div class="connection-card">
+
+                <span class="connection-icon">
+                    ◈
+                </span>
+
+                <div>
+
+                    <span>
+                        DATABASE
+                    </span>
+
+                    <strong>
+                        Operational
+                    </strong>
+
+                </div>
+
+                <span class="connection-dot"></span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            Industrial IoT Machine Monitoring System
+
+            <span>
+                •
+            </span>
+
+            Real-time Data Acquisition & Visualization
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

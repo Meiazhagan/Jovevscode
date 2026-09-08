@@ -1,0 +1,962 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #07111f;
+    color: #e8eef7;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 245px;
+    height: 100vh;
+
+    background: #0a1626;
+    border-right: 1px solid #1b2b40;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo-section {
+    height: 85px;
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
+    border-bottom: 1px solid #1b2b40;
+}
+
+.iot-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+
+    background: #1683ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 12px;
+    overflow: hidden;
+}
+
+.iot-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-section h2 {
+    font-size: 17px;
+    margin: 0;
+}
+
+.logo-section span {
+    font-size: 11px;
+    color: #8493a8;
+}
+/* NAVIGATION */
+
+.navigation {
+    padding: 20px 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+
+    height: 48px;
+
+    padding: 0 15px;
+    margin-bottom: 7px;
+
+    border-radius: 8px;
+
+    color: #9aa9bc;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.nav-item:hover {
+    background: #101f32;
+    color: white;
+}
+
+.nav-item.active {
+    background: #12345b;
+    color: white;
+}
+
+.nav-icon {
+    width: 30px;
+    font-size: 18px;
+}
+
+.alarm-badge {
+    margin-left: auto;
+
+    min-width: 24px;
+    height: 22px;
+
+    border-radius: 12px;
+
+    background: #e84d4d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+}
+
+
+/* SYSTEM STATUS */
+
+.system-status {
+    margin: auto 15px 15px;
+
+    padding: 15px;
+
+    border: 1px solid #1b2b40;
+    border-radius: 10px;
+
+    background: #091523;
+}
+
+.system-title {
+    color: #63758b;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+.system-row {
+    display: flex;
+    align-items: center;
+
+    font-size: 11px;
+
+    margin: 9px 0;
+
+    color: #a9b7c8;
+}
+
+.system-row strong {
+    margin-left: auto;
+
+    color: #63d88a;
+
+    font-size: 10px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    margin-right: 8px;
+}
+
+.status-dot.green {
+    background: #29d879;
+    box-shadow: 0 0 8px #29d879;
+}
+
+
+/* USER */
+
+.user-section {
+    height: 70px;
+
+    border-top: 1px solid #1b2b40;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+}
+
+.user-avatar,
+.profile-avatar {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #1a75d1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.user-section strong {
+    display: block;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.user-section small {
+    display: block;
+
+    color: #708198;
+
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+
+/* ================= MAIN ================= */
+
+.main-content {
+    margin-left: 245px;
+
+    min-height: 100vh;
+
+    padding: 0 28px 25px;
+}
+
+
+/* HEADER */
+
+.top-header {
+    height: 95px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #1b2b40;
+}
+
+.breadcrumb {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #61748a;
+}
+
+.top-header h1 {
+    margin-top: 7px;
+
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.datetime {
+    text-align: right;
+}
+
+.datetime div {
+    color: #8190a3;
+    font-size: 11px;
+}
+
+.datetime strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.live-status {
+    font-size: 11px;
+    color: #56dc8a;
+}
+
+.live-dot {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    background: #32d979;
+
+    border-radius: 50%;
+
+    margin-right: 5px;
+
+    box-shadow: 0 0 8px #32d979;
+}
+
+.notification {
+    position: relative;
+    font-size: 20px;
+}
+
+.notification span {
+    position: absolute;
+
+    top: -7px;
+    right: -8px;
+
+    background: #e84d4d;
+
+    width: 17px;
+    height: 17px;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+}
+
+
+/* ================= CONTROLS ================= */
+
+.trend-controls {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background: #0b1828;
+
+    border: 1px solid #1b2b40;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: end;
+
+    gap: 14px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.control-group label {
+    font-size: 9px;
+
+    color: #73849a;
+
+    letter-spacing: 1px;
+}
+
+.control-group select {
+
+    width: 210px;
+
+    height: 38px;
+
+    background: #07111f;
+
+    color: #b8c5d5;
+
+    border: 1px solid #263950;
+
+    border-radius: 6px;
+
+    padding: 0 10px;
+
+    outline: none;
+
+    font-size: 11px;
+}
+
+.apply-btn,
+.reset-btn {
+
+    height: 38px;
+
+    padding: 0 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.apply-btn {
+
+    background: #176fc9;
+
+    border: 1px solid #2d8cff;
+
+    color: white;
+}
+
+.apply-btn:hover {
+    background: #2384e6;
+}
+
+.reset-btn {
+
+    background: #102237;
+
+    border: 1px solid #2a4059;
+
+    color: #9eafc2;
+}
+
+
+/* ================= MACHINE INFO ================= */
+
+.machine-info {
+
+    margin-top: 15px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+
+    gap: 12px;
+}
+
+.machine-info > div {
+
+    background: #0b1828;
+
+    border: 1px solid #1b2b40;
+
+    border-radius: 8px;
+
+    padding: 13px 15px;
+}
+
+.machine-info span {
+
+    display: block;
+
+    font-size: 9px;
+
+    color: #687b91;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 6px;
+}
+
+.machine-info strong {
+
+    font-size: 12px;
+
+    color: #dce5f0;
+}
+
+.machine-running {
+
+    color: #45d983 !important;
+}
+
+.machine-running i {
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #32d979;
+
+    margin-right: 6px;
+
+    box-shadow: 0 0 7px #32d979;
+}
+
+
+/* ================= TREND PANEL ================= */
+
+.trend-panel {
+
+    margin-top: 15px;
+
+    background: #0b1828;
+
+    border: 1px solid #1b2b40;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.trend-header {
+
+    min-height: 70px;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #1b2b40;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.trend-header h2 {
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.trend-header span {
+
+    display: block;
+
+    color: #718299;
+
+    font-size: 10px;
+
+    margin-top: 5px;
+}
+
+.trend-live {
+
+    color: #50d989 !important;
+
+    font-size: 10px !important;
+}
+
+
+/* ================= CHART ================= */
+
+.chart-container {
+
+    height: 390px;
+
+    display: flex;
+
+    padding: 20px 20px 10px;
+}
+
+.y-axis {
+
+    width: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 3px 0 30px;
+
+    color: #62748a;
+
+    font-size: 9px;
+
+    text-align: right;
+
+    padding-right: 10px;
+}
+
+.chart-area {
+
+    position: relative;
+
+    flex: 1;
+
+    height: 100%;
+}
+
+.grid-line {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    border-top: 1px dashed #1b2c40;
+}
+
+.line-1 {
+    top: 0;
+}
+
+.line-2 {
+    top: 20%;
+}
+
+.line-3 {
+    top: 40%;
+}
+
+.line-4 {
+    top: 60%;
+}
+
+.line-5 {
+    top: 80%;
+}
+
+#trendChart {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: calc(100% - 30px);
+
+    overflow: visible;
+}
+
+.x-axis {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #62748a;
+
+    font-size: 9px;
+}
+
+
+/* CHART FOOTER */
+
+.chart-footer {
+
+    height: 42px;
+
+    border-top: 1px solid #1b2b40;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #66798f;
+
+    font-size: 9px;
+}
+
+
+/* ================= KPI ================= */
+
+.trend-kpis {
+
+    margin-top: 15px;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+.kpi-card {
+
+    background: #0b1828;
+
+    border: 1px solid #1b2b40;
+
+    border-radius: 8px;
+
+    padding: 16px;
+}
+
+.kpi-card span {
+
+    display: block;
+
+    color: #687b91;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.kpi-card strong {
+
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 21px;
+}
+
+.kpi-card small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #586b81;
+
+    font-size: 9px;
+}
+
+
+/* ================= MULTI PARAMETER ================= */
+
+.multi-trend-panel {
+
+    margin-top: 15px;
+
+    background: #0b1828;
+
+    border: 1px solid #1b2b40;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.panel-header {
+
+    padding: 16px 20px;
+
+    border-bottom: 1px solid #1b2b40;
+}
+
+.panel-header h2 {
+
+    font-size: 14px;
+}
+
+.panel-header span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    color: #697b91;
+}
+
+.parameter-grid {
+
+    padding: 15px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.parameter-card {
+
+    background: #091523;
+
+    border: 1px solid #1b2b40;
+
+    border-radius: 8px;
+
+    padding: 15px;
+}
+
+.parameter-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #8394a8;
+
+    font-size: 10px;
+}
+
+.parameter-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #29d879;
+
+    box-shadow: 0 0 7px #29d879;
+}
+
+.parameter-dot.warning {
+
+    background: #f2b83f;
+
+    box-shadow: 0 0 7px #f2b83f;
+}
+
+.parameter-card strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 19px;
+}
+
+.parameter-card small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #596c82;
+
+    font-size: 9px;
+}
+
+.mini-bar {
+
+    height: 4px;
+
+    background: #152538;
+
+    border-radius: 4px;
+
+    margin-top: 12px;
+
+    overflow: hidden;
+}
+
+.mini-bar div {
+
+    height: 100%;
+
+    background: #2d8cff;
+
+    border-radius: 4px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 22px;
+
+    color: #53657b;
+
+    font-size: 10px;
+}
+
+footer span {
+    margin: 0 7px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+
+    .trend-controls {
+        flex-wrap: wrap;
+        align-items: end;
+    }
+
+    .machine-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trend-kpis {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .parameter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 70px;
+    }
+
+    .logo-section div:not(.iot-logo),
+    .nav-item {
+        font-size: 0;
+    }
+
+    .main-content {
+        margin-left: 70px;
+        padding: 0 15px;
+    }
+
+    .header-right .datetime,
+    .header-right .profile span {
+        display: none;
+    }
+
+    .trend-controls {
+        display: grid;
+
+        grid-template-columns: 1fr;
+    }
+
+    .control-group select {
+        width: 100%;
+    }
+
+    .machine-info {
+        grid-template-columns: 1fr;
+    }
+
+    .trend-kpis {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .parameter-grid {
+        grid-template-columns: 1fr;
+    }
+}

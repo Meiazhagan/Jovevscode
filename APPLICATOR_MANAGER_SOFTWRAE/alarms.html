@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Industrial IoT | Alarms</title>
+
+    <link rel="stylesheet" href="css/alarms.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo-section">
+            <img src="jovelogo.png" 
+         alt="Company Logo" 
+         class="company-logo">
+
+            <div>
+                <h2>Industrial</h2>
+                <span>IoT Monitoring</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                Dashboard
+            </a>
+
+            <a href="machines.html" class="nav-item">
+                <span class="nav-icon">▦</span>
+                Machines
+            </a>
+
+            <a href="alarms.html" class="nav-item active">
+                <span class="nav-icon">⚠</span>
+                Alarms
+                <span class="alarm-badge" id="navAlarmCount">15</span>
+            </a>
+
+            <a href="trends.html" class="nav-item">
+                <span class="nav-icon">⌁</span>
+                Trends
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">▤</span>
+                Reports
+            </a>
+
+            <a href="#" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+        <!-- SYSTEM STATUS -->
+        <div class="system-status">
+
+            <div class="system-title">
+                SYSTEM STATUS
+            </div>
+
+            <div class="system-row">
+                <span class="status-dot green"></span>
+                IoT Cloud
+                <strong>Online</strong>
+            </div>
+
+            <div class="system-row">
+                <span class="status-dot green"></span>
+                PLC Network
+                <strong>Online</strong>
+            </div>
+
+            <div class="system-row">
+                <span class="status-dot green"></span>
+                Database
+                <strong>Online</strong>
+            </div>
+
+        </div>
+
+        <div class="user-section">
+            <div class="user-avatar">A</div>
+
+            <div>
+                <strong>Administrator</strong>
+                <small>System Admin</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+
+            <div>
+                <span class="breadcrumb">
+                    INDUSTRIAL IoT / ALARM MANAGEMENT
+                </span>
+
+                <h1>Alarm Management</h1>
+            </div>
+
+            <div class="header-right">
+
+                <div class="datetime">
+                    <div id="currentDate">08 SEP 2026</div>
+                    <strong id="currentTime">22:00:00</strong>
+                </div>
+
+                <div class="live-status">
+                    <span class="live-dot"></span>
+                    LIVE
+                </div>
+
+                <div class="notification">
+                    ⚠
+                    <span id="headerAlarmCount">15</span>
+                </div>
+
+                <div class="profile">
+                    <div class="profile-avatar">A</div>
+                    <span>Admin</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ALARM SUMMARY -->
+        <section class="alarm-summary">
+
+            <div class="summary-card critical">
+
+                <div class="summary-icon">!</div>
+
+                <div>
+                    <span>CRITICAL</span>
+                    <strong id="criticalCount">3</strong>
+                    <small>Immediate action required</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card high">
+
+                <div class="summary-icon">▲</div>
+
+                <div>
+                    <span>HIGH</span>
+                    <strong id="highCount">5</strong>
+                    <small>Attention required</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card warning">
+
+                <div class="summary-icon">⚠</div>
+
+                <div>
+                    <span>WARNING</span>
+                    <strong id="warningCount">7</strong>
+                    <small>Monitor condition</small>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card acknowledged">
+
+                <div class="summary-icon">✓</div>
+
+                <div>
+                    <span>ACKNOWLEDGED</span>
+                    <strong id="ackCount">4</strong>
+                    <small>Operator acknowledged</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOOLBAR -->
+        <section class="alarm-toolbar">
+
+            <div class="toolbar-left">
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="alarmSearch"
+                        placeholder="Search machine, alarm or description..."
+                    >
+                </div>
+
+                <select id="severityFilter">
+                    <option value="ALL">All Severity</option>
+                    <option value="CRITICAL">Critical</option>
+                    <option value="HIGH">High</option>
+                    <option value="WARNING">Warning</option>
+                </select>
+
+                <select id="statusFilter">
+                    <option value="ALL">All Status</option>
+                    <option value="ACTIVE">Active</option>
+                    <option value="ACKNOWLEDGED">Acknowledged</option>
+                </select>
+
+                <select id="areaFilter">
+                    <option value="ALL">All Areas</option>
+                    <option value="Production Area">Production Area</option>
+                    <option value="Packaging Area">Packaging Area</option>
+                    <option value="Utility Area">Utility Area</option>
+                    <option value="Process Area">Process Area</option>
+                </select>
+
+            </div>
+
+
+            <div class="toolbar-right">
+
+                <button class="action-btn acknowledge-all" onclick="acknowledgeAll()">
+                    ✓ Acknowledge All
+                </button>
+
+                <button class="action-btn refresh-btn" onclick="loadAlarms()">
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ALARM TABLE -->
+        <section class="alarm-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Active Alarm Events</h2>
+
+                    <span id="alarmResult">
+                        Showing 15 active alarms
+                    </span>
+                </div>
+
+                <div class="connection-status">
+                    <span class="status-dot green"></span>
+                    Real-time monitoring
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table class="alarm-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>TIME</th>
+                            <th>SEVERITY</th>
+                            <th>MACHINE</th>
+                            <th>AREA</th>
+                            <th>ALARM</th>
+                            <th>DESCRIPTION</th>
+                            <th>VALUE</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="alarmTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            Industrial IoT Machine Monitoring System
+            <span>•</span>
+            Alarm Management
+            <span>•</span>
+            © 2026
+        </footer>
+
+    </main>
+
+
+    <script src="js/alarms.js"></script>
+
+</body>
+</html>

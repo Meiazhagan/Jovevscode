@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>IoT Machine Monitoring</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="css/machines.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MAIN APPLICATION
+    ====================================================== -->
+
+    <div class="app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- Logo -->
+
+            <div class="logo-area">
+
+                <img src="jovelogo.png" 
+         alt="Company Logo" 
+         class="company-logo">
+
+
+                <div class="logo-text">
+
+                    <h2>INDUSTRIAL</h2>
+
+                    <span>MONITORING</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="navigation">
+
+
+                <a href="dashboard.html" class="nav-item">
+
+                    <span class="nav-icon">⌂</span>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="machines.html" class="nav-item active">
+
+                    <span class="nav-icon">▦</span>
+
+                    <span>Machines</span>
+
+                </a>
+
+
+                <a href="alarms.html" class="nav-item">
+
+                    <span class="nav-icon">⚠</span>
+
+                    <span>Alarms</span>
+
+                    <span class="nav-badge">
+                        15
+                    </span>
+
+                </a>
+
+
+                <a href="trends.html" class="nav-item">
+
+                    <span class="nav-icon">⌁</span>
+
+                    <span>Trends</span>
+
+                </a>
+
+
+                <a href="#" class="nav-item">
+
+                    <span class="nav-icon">▥</span>
+
+                    <span>Reports</span>
+
+                </a>
+
+
+                <a href="#" class="nav-item">
+
+                    <span class="nav-icon">⚙</span>
+
+                    <span>Settings</span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- System Status -->
+
+            <div class="system-status">
+
+
+                <div class="status-header">
+
+                    <span class="online-dot"></span>
+
+                    <span>
+                        System Online
+                    </span>
+
+                </div>
+
+
+                <div class="status-line">
+
+                    <span>Cloud</span>
+
+                    <strong>Connected</strong>
+
+                </div>
+
+
+                <div class="status-line">
+
+                    <span>Gateway</span>
+
+                    <strong>Online</strong>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- User -->
+
+            <div class="user-area">
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <small>
+                        System Admin
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOP HEADER
+            ================================================== -->
+
+            <header class="top-header">
+
+
+                <div>
+
+                    <p class="breadcrumb">
+                        Industrial IoT / Machines
+                    </p>
+
+                    <h1>
+                        Machine Monitoring
+                    </h1>
+
+                </div>
+
+
+                <div class="header-right">
+
+
+                    <!-- Current Time -->
+
+                    <div class="time">
+
+                        <span>
+                            ● LIVE
+                        </span>
+
+                        <strong>
+                            18:32:14
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Notification -->
+
+                    <div class="notification">
+
+                        🔔
+
+                        <span>
+                            15
+                        </span>
+
+                    </div>
+
+
+                    <!-- Profile -->
+
+                    <div class="profile">
+
+                        <div class="profile-avatar">
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Admin
+                            </strong>
+
+                            <small>
+                                Administrator
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 MACHINE SUMMARY
+            ================================================== -->
+
+            <section class="summary">
+
+
+                <div class="summary-card total">
+
+                    <div class="summary-icon">
+                        ▦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            TOTAL MACHINES
+                        </span>
+
+                        <strong>
+                            300
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card running">
+
+                    <div class="summary-icon">
+                        ●
+                    </div>
+
+                    <div>
+
+                        <span>
+                            RUNNING
+                        </span>
+
+                        <strong>
+                            247
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card stopped">
+
+                    <div class="summary-icon">
+                        ●
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STOPPED
+                        </span>
+
+                        <strong>
+                            38
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card warning">
+
+                    <div class="summary-icon">
+                        ●
+                    </div>
+
+                    <div>
+
+                        <span>
+                            WARNING
+                        </span>
+
+                        <strong>
+                            15
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MACHINE CONTROL BAR
+            ================================================== -->
+
+            <section class="machine-toolbar">
+
+
+                <div class="machine-title">
+
+                    <h2>
+                        All Machines
+                    </h2>
+
+                    <span>
+                        300 connected assets
+                    </span>
+
+                </div>
+
+
+                <div class="toolbar-actions">
+
+
+                    <!-- Search -->
+
+                    <div class="search-box">
+
+                        <span>
+                            🔍
+                        </span>
+
+                        <input
+                            type="text"
+                            placeholder="Search machine..."
+                        >
+
+                    </div>
+
+
+                    <!-- Area Filter -->
+
+                    <select>
+
+                        <option>
+                            All Areas
+                        </option>
+
+                        <option>
+                            Production Area
+                        </option>
+
+                        <option>
+                            Packaging Area
+                        </option>
+
+                        <option>
+                            Utility Area
+                        </option>
+
+                        <option>
+                            Process Area
+                        </option>
+
+                    </select>
+
+
+                    <!-- Status Filter -->
+
+                    <select>
+
+                        <option>
+                            All Status
+                        </option>
+
+                        <option>
+                            Running
+                        </option>
+
+                        <option>
+                            Stopped
+                        </option>
+
+                        <option>
+                            Warning
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 STATUS LEGEND
+            ================================================== -->
+
+            <div class="legend">
+
+
+                <div>
+                    <span class="dot green"></span>
+                    Running
+                </div>
+
+
+                <div>
+                    <span class="dot red"></span>
+                    Stopped
+                </div>
+
+
+                <div>
+                    <span class="dot orange"></span>
+                    Warning
+                </div>
+
+
+                <div>
+                    <span class="dot grey"></span>
+                    Offline
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MACHINE GRID
+            ================================================== -->
+
+            <section class="machine-grid">
+
+
+                <!-- MACHINE 001 -->
+
+                <a href="machine.html?id=M001"
+                   class="machine-card">
+
+                    <div class="machine-top">
+
+                        <div class="machine-status">
+
+                            <span class="dot green"></span>
+
+                            <span>
+                                RUNNING
+                            </span>
+
+                        </div>
+
+                        <span class="machine-id">
+                            M001
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Packaging Machine 01
+                    </h3>
+
+                    <p class="area">
+                        Production Area / Line 01
+                    </p>
+
+
+                    <div class="machine-data">
+
+                        <div>
+
+                            <span>
+                                TEMP
+                            </span>
+
+                            <strong>
+                                72.4 °C
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SPEED
+                            </span>
+
+                            <strong>
+                                1450 RPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="machine-footer">
+
+                        <span>
+                            PLC: S7-1500
+                        </span>
+
+                        <span>
+                            View →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- MACHINE 002 -->
+
+                <a href="machine.html?id=M002"
+                   class="machine-card">
+
+                    <div class="machine-top">
+
+                        <div class="machine-status">
+
+                            <span class="dot green"></span>
+
+                            <span>
+                                RUNNING
+                            </span>
+
+                        </div>
+
+                        <span class="machine-id">
+                            M002
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Filling Machine 01
+                    </h3>
+
+                    <p class="area">
+                        Production Area / Line 02
+                    </p>
+
+
+                    <div class="machine-data">
+
+                        <div>
+
+                            <span>
+                                TEMP
+                            </span>
+
+                            <strong>
+                                68.2 °C
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SPEED
+                            </span>
+
+                            <strong>
+                                1380 RPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="machine-footer">
+
+                        <span>
+                            PLC: S7-1500
+                        </span>
+
+                        <span>
+                            View →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- MACHINE 003 -->
+
+                <a href="machine.html?id=M003"
+                   class="machine-card stopped">
+
+                    <div class="machine-top">
+
+                        <div class="machine-status">
+
+                            <span class="dot red"></span>
+
+                            <span>
+                                STOPPED
+                            </span>
+
+                        </div>
+
+                        <span class="machine-id">
+                            M003
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Conveyor System 01
+                    </h3>
+
+                    <p class="area">
+                        Production Area / Line 03
+                    </p>
+
+
+                    <div class="machine-data">
+
+                        <div>
+
+                            <span>
+                                TEMP
+                            </span>
+
+                            <strong>
+                                -- °C
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SPEED
+                            </span>
+
+                            <strong>
+                                0 RPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="machine-footer">
+
+                        <span>
+                            PLC: S7-1200
+                        </span>
+
+                        <span>
+                            View →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- MACHINE 004 -->
+
+                <a href="machine.html?id=M004"
+                   class="machine-card">
+
+                    <div class="machine-top">
+
+                        <div class="machine-status">
+
+                            <span class="dot green"></span>
+
+                            <span>
+                                RUNNING
+                            </span>
+
+                        </div>
+
+                        <span class="machine-id">
+                            M004
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Pump Station 01
+                    </h3>
+
+                    <p class="area">
+                        Utility Area / Pump House
+                    </p>
+
+
+                    <div class="machine-data">
+
+                        <div>
+
+                            <span>
+                                TEMP
+                            </span>
+
+                            <strong>
+                                65.1 °C
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SPEED
+                            </span>
+
+                            <strong>
+                                1450 RPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="machine-footer">
+
+                        <span>
+                            PLC: S7-1200
+                        </span>
+
+                        <span>
+                            View →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- MACHINE 005 -->
+
+                <a href="machine.html?id=M005"
+                   class="machine-card warning-card">
+
+                    <div class="machine-top">
+
+                        <div class="machine-status">
+
+                            <span class="dot orange"></span>
+
+                            <span>
+                                WARNING
+                            </span>
+
+                        </div>
+
+                        <span class="machine-id">
+                            M005
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Mixing Machine 01
+                    </h3>
+
+                    <p class="area">
+                        Process Area / Mixer
+                    </p>
+
+
+                    <div class="machine-data">
+
+                        <div>
+
+                            <span>
+                                TEMP
+                            </span>
+
+                            <strong>
+                                81.6 °C
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SPEED
+                            </span>
+
+                            <strong>
+                                1120 RPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="machine-footer">
+
+                        <span>
+                            PLC: S7-1500
+                        </span>
+
+                        <span>
+                            View →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- MACHINE 006 -->
+
+                <a href="machine.html?id=M006"
+                   class="machine-card">
+
+                    <div class="machine-top">
+
+                        <div class="machine-status">
+
+                            <span class="dot green"></span>
+
+                            <span>
+                                RUNNING
+                            </span>
+
+                        </div>
+
+                        <span class="machine-id">
+                            M006
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Compressor 01
+                    </h3>
+
+                    <p class="area">
+                        Utility Area / Compressor
+                    </p>
+
+
+                    <div class="machine-data">
+
+                        <div>
+
+                            <span>
+                                TEMP
+                            </span>
+
+                            <strong>
+                                59.8 °C
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SPEED
+                            </span>
+
+                            <strong>
+                                2950 RPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="machine-footer">
+
+                        <span>
+                            PLC: S7-1500
+                        </span>
+
+                        <span>
+                            View →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- MACHINE 007 -->
+
+                <a href="machine.html?id=M007"
+                   class="machine-card">
+
+                    <div class="machine-top">
+
+                        <div class="machine-status">
+
+                            <span class="dot green"></span>
+
+                            <span>
+                                RUNNING
+                            </span>
+
+                        </div>
+
+                        <span class="machine-id">
+                            M007
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Reactor System 01
+                    </h3>
+
+                    <p class="area">
+                        Process Area / Reactor
+                    </p>
+
+
+                    <div class="machine-data">
+
+                        <div>
+
+                            <span>
+                                TEMP
+                            </span>
+
+                            <strong>
+                                74.5 °C
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SPEED
+                            </span>
+
+                            <strong>
+                                980 RPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="machine-footer">
+
+                        <span>
+                            PLC: S7-1500
+                        </span>
+
+                        <span>
+                            View →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- MACHINE 008 -->
+
+                <a href="machine.html?id=M008"
+                   class="machine-card stopped">
+
+                    <div class="machine-top">
+
+                        <div class="machine-status">
+
+                            <span class="dot red"></span>
+
+                            <span>
+                                STOPPED
+                            </span>
+
+                        </div>
+
+                        <span class="machine-id">
+                            M008
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Blower System 01
+                    </h3>
+
+                    <p class="area">
+                        Utility Area / Blower
+                    </p>
+
+
+                    <div class="machine-data">
+
+                        <div>
+
+                            <span>
+                                TEMP
+                            </span>
+
+                            <strong>
+                                -- °C
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SPEED
+                            </span>
+
+                            <strong>
+                                0 RPM
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="machine-footer">
+
+                        <span>
+                            PLC: S7-1200
+                        </span>
+
+                        <span>
+                            View →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PAGINATION
+            ================================================== -->
+
+            <div class="pagination">
+
+                <button>
+                    ‹
+                </button>
+
+                <button class="page-active">
+                    1
+                </button>
+
+                <button>
+                    2
+                </button>
+
+                <button>
+                    3
+                </button>
+
+                <button>
+                    4
+                </button>
+
+                <button>
+                    5
+                </button>
+
+                <span>
+                    ...
+                </span>
+
+                <button>
+                    30
+                </button>
+
+                <button>
+                    ›
+                </button>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+
+</body>
+
+</html>
