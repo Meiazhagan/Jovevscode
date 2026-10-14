@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Machine Data Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div>
+            <h1>IoT Machine Monitoring</h1>
+            <p>Live machine data from MySQL database</p>
+        </div>
+        <button id="refreshButton" onclick="fetchMachineData()">
+            Refresh Data
+        </button>
+    </header>
+
+    <main class="container">
+
+        <section class="summary-cards">
+            <div class="card">
+                <h3>Total Records</h3>
+                <p id="totalRecords">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Latest Temperature</h3>
+                <p id="latestTemperature">--</p>
+            </div>
+
+            <div class="card">
+                <h3>Latest Pressure</h3>
+                <p id="latestPressure">--</p>
+            </div>
+
+            <div class="card">
+                <h3>Machine Status</h3>
+                <p id="latestStatus">--</p>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <h2>Machine Data Records</h2>
+            <p id="message">Loading data...</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Entry ID</th>
+                            <th>Recorded At</th>
+                            <th>Temperature</th>
+                            <th>Pressure</th>
+                            <th>Machine Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="machineData">
+                        <tr>
+                            <td colspan="6">Loading data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        IoT Machine Monitoring System
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

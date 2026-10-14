@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar EMS Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+body {
+    background-color: #0f172a;
+    color: white;
+}
+
+button {
+    background-color: #16a34a;
+    color: white;
+    border-radius: 6px;
+    padding: 8px;
+}
+</style>
+<body>
+
+<div class="app">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="jove_logo.png" alt="Company Logo">
+        </div>
+
+        <nav class="navigation">
+            <a href="register.html" class="nav-item active">
+                <span class="nav-icon">⌂</span> Dashboard
+            </a>
+
+            <a href="#graph" class="nav-item">
+                <span class="nav-icon">▥</span> PLANTS
+                <span class="arrow">⌄</span>
+            </a>
+
+            <a href="#general-data" class="nav-item">
+                <span class="nav-icon">▦</span> Basic Tabular View
+                <span class="arrow">⌄</span>
+            </a>
+
+            <a href="#plant-config" class="nav-item">
+                <span class="nav-icon">⚙</span> Plant Config
+                <span class="arrow">⌄</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-company">
+            <img src="images/company-logo.png" alt="Company Logo">
+        </div>
+
+        <div class="sidebar-footer">
+            <span title="Messages">☏</span>
+            <span title="Support">ⓘ</span>
+            <span title="Contact">☎</span>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP HEADER -->
+        <header class="top-header">
+
+            <button class="menu-button" id="menuButton"
+                    aria-label="Toggle navigation">☰</button>
+
+            <select class="plant-select" id="plantSelect"
+                    aria-label="Select plant">
+                <option value="gaya">▦ 1.AMAS_GAYA_7MW</option>
+                <option value="plant2">2. Solar Plant 2</option>
+                <option value="plant3">3. Solar Plant 3</option>
+                <option value="plant4">4. solar plant 4</option>
+            </select>
+
+            <div class="company-heading">
+                <img src="images/company-logo.png" alt="Company Logo">
+                <strong>YOUR COMPANY NAME</strong>
+            </div>
+
+            <select class="language-select" aria-label="Language">
+                <option value="EN">🌐 EN</option>
+                <option value="TA">தமிழ்</option>
+            </select>
+
+            <div class="profile-icon" title="User Profile">●</div>
+
+        </header>
+
+        <!-- LIVE SUMMARY BAR -->
+        <section class="summary-bar">
+
+            <div class="summary-item last-log">
+                <span>Last Log Time <small>(Auto refresh)</small></span>
+                <strong id="lastLog">10/12/2026 10:00</strong>
+            </div>
+
+            <div class="summary-item">
+                <span>Solar Power</span>
+                <strong id="solarPower">3,950.417 kW</strong>
+            </div>
+
+            <div class="summary-item">
+                <span>Day Gen</span>
+                <strong id="dayGen">5,879.750 kWh</strong>
+            </div>
+
+            <div class="summary-item">
+                <span>Yesterday Gen</span>
+                <strong id="yesterdayGen">30,704.750 kWh</strong>
+            </div>
+
+            <div class="summary-item">
+                <span>Month Gen</span>
+                <strong id="monthGen">260,978.000 kWh</strong>
+            </div>
+
+            <div class="summary-item">
+                <span>CUF</span>
+                <strong id="cuf">3.500 %</strong>
+            </div>
+
+            <div class="summary-item">
+                <span>Total Gen</span>
+                <strong id="totalGen">3,484,480 kWh</strong>
+            </div>
+
+        </section>
+
+        <!-- DASHBOARD BODY -->
+        <div class="dashboard-body">
+
+            <div class="section-title">Plant</div>
+
+            <div class="view-tabs">
+                <button class="tab active" data-view="panel">▥ Panel</button>
+                <button class="tab" data-view="table">▦ Table</button>
+            </div>
+
+            <!-- KPI CARDS -->
+            <section class="kpi-grid" id="kpiGrid">
+
+                <div class="kpi-card purple">
+                    <div>
+                        <strong id="irradiance">701.000</strong>
+                        <span>IRR (W/m²)</span>
+                    </div>
+                    <div>
+                        <strong id="insolation">1.057</strong>
+                        <span>INS (kWh/m²/Day)</span>
+                    </div>
+                    <span class="kpi-symbol">☁</span>
+                </div>
+
+                <div class="kpi-card turquoise">
+                    <div>
+                        <strong id="dayPR">78.525</strong>
+                        <span>Day PR (%)</span>
+                    </div>
+                    <div>
+                        <strong id="monthPR">79.933</strong>
+                        <span>Month PR (%)</span>
+                    </div>
+                    <span class="kpi-symbol">⌁</span>
+                </div>
+
+                <div class="kpi-card yellow">
+                    <div>
+                        <strong id="ambientTemp">27.861</strong>
+                        <span>Amb (°C)</span>
+                    </div>
+                    <div>
+                        <strong id="moduleTemp">31.780</strong>
+                        <span>Mod (°C)</span>
+                    </div>
+                    <span class="kpi-symbol">☼</span>
+                </div>
+
+                <div class="kpi-card blue">
+                    <div>
+                        <strong id="co2">2.875 KTon</strong>
+                        <span>CO₂ Reduction</span>
+                    </div>
+                    <div>
+                        <strong id="savings">₹1.063 Cr</strong>
+                        <span>Savings</span>
+                    </div>
+                    <span class="kpi-symbol">₹</span>
+                </div>
+
+            </section>
+
+            <!-- CHART AND GENERAL DATA -->
+            <section class="content-grid" id="panelView">
+
+                <div class="panel graph-panel" id="graph">
+
+                    <h3>Plant Line Graph</h3>
+
+                    <div class="chart-controls">
+                        <label for="graphMetric">Select Options</label>
+                        <select id="graphMetric">
+                            <option value="power">Solar Power (kW)</option>
+                            <option value="irradiance">Irradiance (W/m²)</option>
+                            <option value="temperature">Module Temperature (°C)</option>
+                        </select>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="plantChart"></canvas>
+                    </div>
+
+                </div>
+
+                <div class="panel general-panel" id="general-data">
+
+                    <h3>General Data</h3>
+
+                    <div class="general-grid">
+
+                        <div class="data-card">
+                            <div class="data-card-title">Capacity</div>
+                            <div class="data-row">
+                                <span>DC</span>
+                                <strong>7,084.000 kWp</strong>
+                            </div>
+                            <div class="data-row">
+                                <span>AC</span>
+                                <strong>7,000.000 kW</strong>
+                            </div>
+                        </div>
+
+                        <div class="data-card">
+                            <div class="data-card-title">Power</div>
+                            <div class="data-row">
+                                <span>DC</span>
+                                <strong>3,985.200 kW</strong>
+                            </div>
+                            <div class="data-row">
+                                <span>AC</span>
+                                <strong>3,950.417 kW</strong>
+                            </div>
+                        </div>
+
+                        <div class="data-card">
+                            <div class="data-card-title">Energy</div>
+                            <div class="data-row">
+                                <span>Today</span>
+                                <strong>5,879.750 kWh</strong>
+                            </div>
+                            <div class="data-row">
+                                <span>Month</span>
+                                <strong>260,978 kWh</strong>
+                            </div>
+                        </div>
+
+                        <div class="data-card">
+                            <div class="data-card-title">Environment</div>
+                            <div class="data-row">
+                                <span>Ambient</span>
+                                <strong>27.861 °C</strong>
+                            </div>
+                            <div class="data-row">
+                                <span>Module</span>
+                                <strong>31.780 °C</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- TABLE VIEW -->
+            <section class="panel table-panel" id="tableView" hidden>
+                <h3>Plant Data Table</h3>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Value</th>
+                                <th>Unit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Solar Power</td><td>3,950.417</td><td>kW</td></tr>
+                            <tr><td>Day Generation</td><td>5,879.750</td><td>kWh</td></tr>
+                            <tr><td>Month Generation</td><td>260,978.000</td><td>kWh</td></tr>
+                            <tr><td>CUF</td><td>3.500</td><td>%</td></tr>
+                            <tr><td>Irradiance</td><td>701.000</td><td>W/m²</td></tr>
+                            <tr><td>Day Performance Ratio</td><td>78.525</td><td>%</td></tr>
+                            <tr><td>Ambient Temperature</td><td>27.861</td><td>°C</td></tr>
+                            <tr><td>Module Temperature</td><td>31.780</td><td>°C</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <footer class="page-footer">
+                <span>© 2026 Energy Management System</span>
+                <span>Solar Plant Monitoring Dashboard</span>
+            </footer>
+
+        </div>
+    </main>
+<script>
+    // Sidebar toggle
+    const menuButton = document.getElementById("menuButton");
+    const sidebar = document.querySelector(".sidebar");
+
+    menuButton.addEventListener("click", () => {
+        sidebar.classList.toggle("sidebar-hidden");
+    });
+
+    // Panel / Table switching
+    const tabs = document.querySelectorAll(".tab");
+    const panelView = document.getElementById("panelView");
+    const tableView = document.getElementById("tableView");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(item => item.classList.remove("active"));
+            tab.classList.add("active");
+
+            const showTable = tab.dataset.view === "table";
+            panelView.hidden = showTable;
+            tableView.hidden = !showTable;
+        });
+    });
+
+    // Chart with illustrative sample data
+    const chartContext = document.getElementById("plantChart");
+
+    const chartData = {
+        power: {
+            label: "Solar Power (kW)",
+            values: [250, 520, 1100, 2100, 3200, 3950, 3700, 2800, 1600, 500]
+        },
+        irradiance: {
+            label: "Irradiance (W/m²)",
+            values: [100, 250, 400, 550, 650, 701, 680, 500, 300, 100]
+        },
+        temperature: {
+            label: "Module Temperature (°C)",
+            values: [24, 25, 27, 29, 31, 31.78, 32, 30, 28, 26]
+        }
+    };
+
+    const plantChart = new Chart(chartContext, {
+        type: "line",
+        data: {
+            labels: [
+                "08:00", "09:00", "10:00", "11:00", "12:00",
+                "13:00", "14:00", "15:00", "16:00", "17:00"
+            ],
+            datasets: [{
+                label: chartData.power.label,
+                data: chartData.power.values,
+                borderColor: "#2496ff",
+                backgroundColor: "rgba(36, 150, 255, 0.12)",
+                fill: true,
+                tension: 0.35,
+                pointRadius: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                intersect: false,
+                mode: "index"
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: "bottom"
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Change graph parameter
+    document.getElementById("graphMetric").addEventListener("change", event => {
+        const selected = chartData[event.target.value];
+        plantChart.data.datasets[0].label = selected.label;
+        plantChart.data.datasets[0].data = selected.values;
+        plantChart.update();
+    });
+
+    // Plant selector demonstration
+    document.getElementById("plantSelect").addEventListener("change", event => {
+        console.log("Selected plant:", event.target.value);
+        // Connect this selection to your plant API when available.
+    });
+</script>
+
+</body>
+</html>
